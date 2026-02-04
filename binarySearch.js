@@ -1,11 +1,24 @@
 //1.
 // Code:
 
-function search(nums, target) {
+function search(arr, t) {
 
-  
+    let l = 0;
+    let r = arr.length - 1;
+
+    while (l <= r) {
+        let m = Math.floor((l + r) / 2);
+        if (t === arr[m]) return m;
+        else if (t > arr[m]) l = m + 1;
+        else r = m - 1;
+    }
+
+    return -1;
+
 }
 
+
+// console.log(search([1, 3, 5, 7, 9], 5));
 
 // Description:
 // Search for a target in a sorted array. Return index if found, else -1.
@@ -28,7 +41,22 @@ function search(nums, target) {
 
 // Code:
 
-function searchInsert(nums, target) {}
+function searchInsert(arr, t) {
+    let l = 0;
+    let r = arr.length - 1;
+
+    while (l <= r) {
+        let m = Math.floor((l + r) / 2)
+        if (t == arr[m]) return m;
+        else if (t > arr[m]) l = m + 1;
+        else r = m - 1
+    }
+
+    return l
+}
+
+
+console.log(searchInsert([1, 3, 4, 6], 7));
 
 
 // Description:
@@ -47,7 +75,7 @@ function searchInsert(nums, target) {}
 
 // Code:
 
-function firstOccurrence(nums, target) {}
+function firstOccurrence(nums, target) { }
 
 
 // Description:
@@ -66,7 +94,7 @@ function firstOccurrence(nums, target) {}
 
 // Code:
 
-function lastOccurrence(nums, target) {}
+function lastOccurrence(nums, target) { }
 
 
 // Description:
@@ -85,7 +113,7 @@ function lastOccurrence(nums, target) {}
 
 // Code:
 
-function countOccurrences(nums, target) {}
+function countOccurrences(nums, target) { }
 
 
 // Description:
@@ -104,7 +132,7 @@ function countOccurrences(nums, target) {}
 
 // Code:
 
-function exists(nums, target) {}
+function exists(nums, target) { }
 
 
 // Description:
@@ -123,7 +151,7 @@ function exists(nums, target) {}
 
 // Code:
 
-function lowerBound(nums, target) {}
+function lowerBound(nums, target) { }
 
 
 // Description:
@@ -142,7 +170,7 @@ function lowerBound(nums, target) {}
 
 // Code:
 
-function upperBound(nums, target) {}
+function upperBound(nums, target) { }
 
 
 // Description:
@@ -161,7 +189,7 @@ function upperBound(nums, target) {}
 
 // Code:
 
-function searchDesc(nums, target) {}
+function searchDesc(nums, target) { }
 
 
 // Description:
@@ -180,7 +208,7 @@ function searchDesc(nums, target) {}
 
 // Code:
 
-function floorValue(nums, target) {}
+function floorValue(nums, target) { }
 
 
 // Description:
@@ -199,7 +227,7 @@ function floorValue(nums, target) {}
 
 // Code:
 
-function ceilValue(nums, target) {}
+function ceilValue(nums, target) { }
 
 
 // Description:
@@ -218,7 +246,7 @@ function ceilValue(nums, target) {}
 
 // Code:
 
-function isPerfectSquare(num) {}
+function isPerfectSquare(num) { }
 
 
 // Description:
@@ -237,7 +265,7 @@ function isPerfectSquare(num) {}
 
 // Code:
 
-function sqrt(num) {}
+function sqrt(num) { }
 
 
 // Description:
@@ -256,7 +284,7 @@ function sqrt(num) {}
 
 // Code:
 
-function guessNumber(n) {}
+function guessNumber(n) { }
 
 
 // Description:
@@ -275,7 +303,7 @@ function guessNumber(n) {}
 
 // Code:
 
-function missingNumber(nums) {}
+function missingNumber(nums) { }
 
 
 // Description:
@@ -294,7 +322,7 @@ function missingNumber(nums) {}
 
 // Code:
 
-function firstTrue(arr) {}
+function firstTrue(arr) { }
 
 
 // Description:
@@ -313,7 +341,7 @@ function firstTrue(arr) {}
 
 // Code:
 
-function firstOne(arr) {}
+function firstOne(arr) { }
 
 
 // Description:
@@ -332,7 +360,7 @@ function firstOne(arr) {}
 
 // Code:
 
-function nextGreatestLetter(letters, target) {}
+function nextGreatestLetter(letters, target) { }
 
 
 // Description:
@@ -351,7 +379,7 @@ function nextGreatestLetter(letters, target) {}
 
 // Code:
 
-function peakIndex(arr) {}
+function peakIndex(arr) { }
 
 
 // Description:
@@ -370,7 +398,7 @@ function peakIndex(arr) {}
 
 // Code:
 
-function findMin(nums) {}
+function findMin(nums) { }
 
 
 // Description:
@@ -389,7 +417,7 @@ function findMin(nums) {}
 
 // Code:
 
-function searchInfinite(arr, target) {}
+function searchInfinite(arr, target) { }
 
 
 // Description:
@@ -407,7 +435,7 @@ function searchInfinite(arr, target) {}
 
 // Code:
 
-function kthSmallest(nums, k) {}
+function kthSmallest(nums, k) { }
 
 
 // Description:
@@ -425,7 +453,7 @@ function kthSmallest(nums, k) {}
 
 // Code:
 
-function isSorted(nums) {}
+function isSorted(nums) { }
 
 
 // Description:
@@ -444,7 +472,7 @@ function isSorted(nums) {}
 
 // Code:
 
-function nearest(nums, target) {}
+function nearest(nums, target) { }
 
 
 // Description:
@@ -462,7 +490,7 @@ function nearest(nums, target) {}
 
 // Code:
 
-function countNegatives(grid) {}
+function countNegatives(grid) { }
 
 
 // Description:
@@ -489,7 +517,7 @@ function countNegatives(grid) {}
 
 // Code:
 
-function searchRotated(nums, target) {}
+function searchRotated(nums, target) { }
 
 
 // Description:
@@ -517,7 +545,7 @@ function searchRotated(nums, target) {}
 
 // Code:
 
-function findMinRotated(nums) {}
+function findMinRotated(nums) { }
 
 
 // Description:
@@ -543,7 +571,7 @@ function findMinRotated(nums) {}
 
 // Code:
 
-function searchRange(nums, target) {}
+function searchRange(nums, target) { }
 
 
 // Description:
@@ -570,7 +598,7 @@ function searchRange(nums, target) {}
 
 // Code:
 
-function minEatingSpeed(piles, h) {}
+function minEatingSpeed(piles, h) { }
 
 
 // Description:
@@ -598,7 +626,7 @@ function minEatingSpeed(piles, h) {}
 
 // Code:
 
-function shipWithinDays(weights, days) {}
+function shipWithinDays(weights, days) { }
 
 
 // Description:
@@ -625,7 +653,7 @@ function shipWithinDays(weights, days) {}
 
 // Code:
 
-function minDays(bloomDay, m, k) {}
+function minDays(bloomDay, m, k) { }
 
 
 // Description:
@@ -653,7 +681,7 @@ function minDays(bloomDay, m, k) {}
 
 // Code:
 
-function maxMinDistance(stalls, cows) {}
+function maxMinDistance(stalls, cows) { }
 
 
 // Description:
@@ -679,7 +707,7 @@ function maxMinDistance(stalls, cows) {}
 
 // Code:
 
-function allocateBooks(pages, students) {}
+function allocateBooks(pages, students) { }
 
 
 // Description:
@@ -707,7 +735,7 @@ function allocateBooks(pages, students) {}
 
 // Code:
 
-function paintersPartition(boards, k) {}
+function paintersPartition(boards, k) { }
 
 
 // Description:
@@ -734,7 +762,7 @@ function paintersPartition(boards, k) {}
 
 // Code:
 
-function minSpeed(dist, hour) {}
+function minSpeed(dist, hour) { }
 
 
 // Description:
@@ -761,7 +789,7 @@ function minSpeed(dist, hour) {}
 
 // Code:
 
-function findPeak(nums) {}
+function findPeak(nums) { }
 
 
 // Description:
@@ -788,7 +816,7 @@ function findPeak(nums) {}
 
 // Code:
 
-function searchMatrix(matrix, target) {}
+function searchMatrix(matrix, target) { }
 
 
 // Description:
@@ -816,7 +844,7 @@ function searchMatrix(matrix, target) {}
 
 // Code:
 
-function findMedian(nums1, nums2) {}
+function findMedian(nums1, nums2) { }
 
 
 // Description:
@@ -842,7 +870,7 @@ function findMedian(nums1, nums2) {}
 
 // Code:
 
-function splitArray(nums, k) {}
+function splitArray(nums, k) { }
 
 
 // Description:
@@ -868,7 +896,7 @@ function splitArray(nums, k) {}
 
 // Code:
 
-function minimumTime(time, totalTrips) {}
+function minimumTime(time, totalTrips) { }
 
 
 // Description:
@@ -891,7 +919,7 @@ function minimumTime(time, totalTrips) {}
 
 // Code:
 
-function searchRotatedWithDuplicates(nums, target) {}
+function searchRotatedWithDuplicates(nums, target) { }
 
 
 // Description:
@@ -910,7 +938,7 @@ function searchRotatedWithDuplicates(nums, target) {}
 
 // Code:
 
-function binarySearchFloat(low, high, precision, fn) {}
+function binarySearchFloat(low, high, precision, fn) { }
 
 
 // Description:
@@ -929,7 +957,7 @@ function binarySearchFloat(low, high, precision, fn) {}
 
 // Code:
 
-function findKthPositive(arr, k) {}
+function findKthPositive(arr, k) { }
 
 
 // Description:
@@ -948,7 +976,7 @@ function findKthPositive(arr, k) {}
 
 // Code:
 
-function smallestDivisor(nums, threshold) {}
+function smallestDivisor(nums, threshold) { }
 
 
 // Description:
@@ -966,7 +994,7 @@ function smallestDivisor(nums, threshold) {}
 
 // Code:
 
-function maxDistance(position, m) {}
+function maxDistance(position, m) { }
 
 
 // Description:
@@ -984,7 +1012,7 @@ function maxDistance(position, m) {}
 
 // Code:
 
-function matrixMedian(matrix) {}
+function matrixMedian(matrix) { }
 
 
 // Description:
@@ -1002,7 +1030,7 @@ function matrixMedian(matrix) {}
 
 // Code:
 
-function rightmostSmaller(nums, target) {}
+function rightmostSmaller(nums, target) { }
 
 
 // Description:
@@ -1020,7 +1048,7 @@ function rightmostSmaller(nums, target) {}
 
 // Code:
 
-function binarySearchPredicate(low, high, predicate) {}
+function binarySearchPredicate(low, high, predicate) { }
 
 
 // Description:
@@ -1038,7 +1066,7 @@ function binarySearchPredicate(low, high, predicate) {}
 
 // Code:
 
-function binarySearchOnAnswer(low, high, can) {}
+function binarySearchOnAnswer(low, high, can) { }
 
 
 // Description:
@@ -1056,7 +1084,7 @@ function binarySearchOnAnswer(low, high, can) {}
 
 // Code:
 
-function optimizeWithBinarySearch(low, high, isValid) {}
+function optimizeWithBinarySearch(low, high, isValid) { }
 
 
 // Description:
