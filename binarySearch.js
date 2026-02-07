@@ -379,7 +379,24 @@ function nextGreatestLetter(letters, target) { }
 
 // Code:
 
-function peakIndex(arr) { }
+function peakIndexInMountainArray(arr) {
+    let l = 0;
+    let r = arr.length - 1;
+    while (l < r) {
+        let m = Math.floor((l + r) / 2);
+        if (arr[l] < arr[m]) {
+            l = m;
+        }
+        if (arr[r] < arr[m]) {
+            r = m;
+        }
+    }
+
+    return l;
+}
+
+
+// console.log(peakIndexInMountainArray([1, 3, 5, 4, 2]));
 
 
 // Description:
@@ -605,10 +622,10 @@ function searchRange(arr, t) {
         }
         return ans;
     }
-    return [findFirst(),findSecond()]
+    return [findFirst(), findSecond()]
 }
 
-console.log(searchRange([5, 7, 7, 8, 8, 10], 8))
+// console.log(searchRange([5, 7, 7, 8, 8, 10], 8))
 // Description:
 // Return the first and last index of the target in a sorted array.
 // If target does not exist, return [-1, -1].
@@ -1128,3 +1145,49 @@ function optimizeWithBinarySearch(low, high, isValid) { }
 // Examples:
 // cost=[10,20,30], budget=50 → 20
 // efficiency=[3,6,7,11], limit=8 → 4
+
+
+
+//51.
+
+var singleNonDuplicate = function (arr) {
+
+    let l = 0;
+    let r = arr.length - 1;
+
+    while (l <= r) {
+        let m = Math.floor((l + r) / 2);
+        if (arr[m] === arr[m - 1]) {
+            if ((m + l + 1) % 2 === 1) {
+                r = m - 2
+            } else {
+                l = m + 1
+            }
+        } else if (arr[m] === arr[m + 1]) {
+            if ((m + 1) % 2 === 1) {
+                l = m + 2
+            }else{
+                r = m - 1;
+            }
+        }else{
+            return arr[m]
+        }
+    }
+  
+};
+
+
+
+console.log(singleNonDuplicate([1, 1, 2, 3, 3, 4, 4, 8, 8]));
+console.log(singleNonDuplicate([3, 3, 7, 7, 10, 11, 11]));
+
+/* 
+xample 1:
+
+Input: nums = [1,1,2,3,3,4,4,8,8]
+Output: 2
+Example 2:
+
+Input: nums = [3,3,7,7,10,11,11]
+Output: 10
+ */
