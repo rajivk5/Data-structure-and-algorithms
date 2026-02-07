@@ -1082,7 +1082,27 @@ function matrixMedian(matrix) { }
 
 // Code:
 
-function rightmostSmaller(nums, target) { }
+function rightmostSmaller(arr, t) {
+     let l = 0;
+    let r = arr.length - 1;
+    let ans = -1;
+
+    while (l <= r) {
+        let m = Math.floor((l + r) / 2);
+
+        if (arr[m] < t) {
+            ans = m;      // valid candidate
+            l = m + 1;    // try to go more right
+        } else {
+            r = m - 1;
+        }
+    }
+
+    return ans;
+}
+
+
+console.log(rightmostSmaller([5,6,7], 7));
 
 
 // Description:
@@ -1166,20 +1186,20 @@ var singleNonDuplicate = function (arr) {
         } else if (arr[m] === arr[m + 1]) {
             if ((m + 1) % 2 === 1) {
                 l = m + 2
-            }else{
+            } else {
                 r = m - 1;
             }
-        }else{
+        } else {
             return arr[m]
         }
     }
-  
+
 };
 
 
 
-console.log(singleNonDuplicate([1, 1, 2, 3, 3, 4, 4, 8, 8]));
-console.log(singleNonDuplicate([3, 3, 7, 7, 10, 11, 11]));
+// console.log(singleNonDuplicate([1, 1, 2, 3, 3, 4, 4, 8, 8]));
+// console.log(singleNonDuplicate([3, 3, 7, 7, 10, 11, 11]));
 
 /* 
 xample 1:
