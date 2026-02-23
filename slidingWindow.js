@@ -305,9 +305,11 @@ var minSubArrayLen = function (target, arr) {
 
 
 var longestOnes = function (arr, k) {
+
     let i = 0;
     let zeroCount = 0;
     let maxLen = 0;
+
     for (let j = 0; j < arr.length; j++) {
 
         if (arr[j] === 0) {
@@ -315,10 +317,9 @@ var longestOnes = function (arr, k) {
         }
 
         while (zeroCount > k) {
-            if (arr[i] == 0) {
+            if (arr[i] === 0) {
                 zeroCount--
             }
-
             i++
         }
 
@@ -329,8 +330,105 @@ var longestOnes = function (arr, k) {
 };
 
 
-console.log(longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2));
+// console.log(longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2));
+
+
+//-----------------------------------------------------------------
+
+
+var totalFruit = function (fruits) {
+    let i = 0;
+    let maxLen = 0;
+    let map = new Map();
+
+    for (let j = 0; j < fruits.length; j++) {
+
+        map.set(fruits[j], (map.get(fruits[j]) || 0) + 1);
+
+        while (map.size > 2) {
+            map.set(fruits[i], map.get(fruits[i]) - 1);
+            if (map.get(fruits[i]) === 0) {
+                map.delete(fruits[i]);
+            }
+            i++;
+        }
+        maxLen = Math.max(maxLen, j - i + 1);
+    }
+    return maxLen;
+};
+
+// console.log(totalFruit([1, 2, 3, 2, 2]));
 
 
 
+var lengthOfLongestSubstring = function (s) {
+
+    let i = 0;
+    let j = 0;
+    let map = {}
+    let maxWS = 0;
+    for (j = 0; j < s.length; j++) {
+        if (map[s[j]] !== undefined && map[s[j]] >= i) {
+            i = map[s[j]] + 1;
+        }
+        map[s[j]] = j;
+        maxWS = Math.max(maxWS, j - i + 1)
+    }
+
+    return maxWS;
+};
+
+
+// console.log(lengthOfLongestSubstring('abbaxyza'));
+
+
+//--------------------------------------------------------------
+
+var longestSubstring = function (s, k) {
+
+
+};
+
+
+// console.log(longestSubstring('aaabb', 3));
+
+
+
+
+
+var divisorSubstrings = function (num, k) {
+    let divisor = 10 ** k;
+    let temp = num;
+    let count = 0;
+
+    while (temp >= 10 ** (k - 1)) {
+
+        let sub = temp % divisor;
+
+        if (sub !== 0 && num % sub === 0) {
+            count++;
+        }
+
+        temp = Math.floor(temp / 10);
+    }
+
+    return count;
+};
+
+// console.log(divisorSubstrings(430043, 2));
+
+
+
+
+
+var hasAllCodes = function (s, k) {
+    let set = new Set();
+
+    for (let i = 0; i <= s.length - k; i++) {
+        let sub = s.substring(i, i + k);
+        set.add(sub);
+    }
+
+    return set.size === (1 << k);
+};
 
