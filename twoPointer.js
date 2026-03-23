@@ -163,7 +163,7 @@ var lengthOfLongestSubstring = function (s) {
     let count = 1;
 
     while (j) {
-      
+
     }
 };
 
@@ -185,9 +185,9 @@ var containsNearbyDuplicate = function (nums, k) {
     let l = 0;
 
     for (let r = 0; r < nums.length; r++) {
-        console.log(set,'left',l,'=',nums[l] ,'right',r,'=',nums[r]);
-        
-        if (r - l > k) {        
+        console.log(set, 'left', l, '=', nums[l], 'right', r, '=', nums[r]);
+
+        if (r - l > k) {
             set.delete(nums[l]);
             l++;
         }
@@ -211,3 +211,36 @@ var containsNearbyDuplicate = function (nums, k) {
 
 
 
+
+var reverseVowels = function (s) {
+    s = s.split('')
+    let i = 0;
+    let j = s.length - 1;
+    let map = new Set('aeiouAEIOU')
+    while (i < j) {
+        if (map.has(s[i]) && map.has(s[j])) {
+            let temp = s[i];
+            s[i] = s[j];
+            s[j] = temp;
+            i++;
+            j--;
+        }
+        else if (map.has(s[i])) {
+            j--;
+        }
+        else if (map.has(s[j])) {
+            i++;
+        }
+        else {
+            i++;
+            j--;
+        }
+    }
+
+    return s.join('')
+
+
+};
+
+
+console.log(reverseVowels("IceCreAm"));//AceCreIm

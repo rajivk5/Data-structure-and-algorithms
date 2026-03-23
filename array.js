@@ -101,6 +101,83 @@ var reverseBits = function (n) {
 
 let n = 43261596
 
-console.log(reverseBits(n));
+// console.log(reverseBits(n));
 
 // console.log(reverseBits(n));
+
+
+
+
+
+var findErrorNums = function (arr) {
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == arr[i + 1]) {
+            return [i + 1, i + 2]
+        }
+    }
+};
+
+
+// console.log(findErrorNums([1, 2, 2, 4]));
+
+
+
+var smallerNumbersThanCurrent = function (arr) {
+    let ans = [];
+    for (let j = 0; j < arr.length; j++) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[j] > arr[i]) {
+                count++
+            }
+        }
+        ans.push(count);
+        count = 0;
+    }
+    return ans;
+};
+
+// console.log(smallerNumbersThanCurrent([8, 1, 2, 2, 3]));//[4,0,1,1,3]
+
+
+
+var findDisappearedNumbers = function (arr) {
+    let ans = []
+    let newArr = []
+    for (let i = 1; i < arr.length + 1; i++) {
+        newArr.push(i)
+    }
+
+    for (let j = 0; j < arr.length; j++) {
+        if (!arr.includes(newArr[j])) {
+            ans.push(j + 1)
+        }
+    }
+
+    return ans;
+};
+
+// console.log(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]));//[5,6]
+// console.log("\n");
+
+// console.log(findDisappearedNumbers([1, 1]));//[2]
+
+
+
+var rotate = function (arr) {
+    let n = arr.length;
+
+    for (let i = 0; i < n; i++) {
+        for (let j = i; j < n; j++) {
+            [arr[i][j], arr[j][i]] = [arr[j][i], arr[i][j]];
+        }
+    }
+
+    for (let i = 0; i < n; i++) {
+        arr[i].reverse();
+    }
+    return arr
+}
+console.log(rotate([[1, 2, 3], [4, 5, 6], [7, 8, 9]]));
+//Output: [[7,4,1],[8,5,2],[9,6,3]]
